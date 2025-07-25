@@ -1,0 +1,65 @@
+name: CI
+
+on:
+  push:
+    branches: [ ci-action, main, develop ]
+  pull_request:
+    branches: [ main, develop ]
+    
+env:
+  DEVELOPER_DIR: /Applications/Xcode.app/Contents/Developer
+
+jobs:
+  test:
+    name: Test
+    runs-on: macos-latest
+    
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+      
+    - name: Select Xcode Version
+      run: sudo xcode-select -switch /Applications/Xcode.app/Contents/Developer
+      
+    - name: Cache derived data
+      uses: actions/cache@v3
+      with:
+        path: ~/Library/Developer/Xcode/DerivedData
+        key: ${{ runner.os }}-derived-data-${{ hashFiles('**/project.pbxproj') }}
+        restore-keys: |
+          ${{ runner.os }}-derived-data-
+          
+    - name: Install SwiftLint
+      run: |
+        brew install swiftlint
+        
+    - name: SwiftLint
+      run: swiftlint --strict
+      
+    - name: Build
+      run: |
+        xcodebuild clean build \
+          -project CinemarkApp/CinemarkApp.xcodeproj \
+          -scheme CinemarkApp \
+          -destination 'platform=iOS Simulator,OS=latest,name=iPhone 15' \
+          CODE_SIGN_IDENTITY="" \
+          CODE_SIGNING_REQUIRED=NO \
+          -allowProvisioningUpdates
+          
+    - name: Test
+      run: |
+        xcodebuild test \
+          -project CinemarkApp/CinemarkApp.xcodeproj \
+          -scheme CinemarkApp \
+          -destination 'platform=iOS Simulator,OS=latest,name=iPhone 15' \
+          -resultBundlePath TestResults \
+          CODE_SIGN_IDENTITY="" \
+          CODE_SIGNING_REQUIRED=NO \
+          -allowProvisioningUpdates
+          
+    - name: Upload test results
+      uses: actions/upload-artifact@v3
+      if: always()
+      with:
+        name: test-results
+        path: TestResults
