@@ -20,31 +20,31 @@ jobs:
       
     - name: Select Xcode Version
       run: sudo xcode-select -s /Applications/Xcode_15.4.app/Contents/Developer
-          
+
     - name: Install Dependencies
       run: |
         brew install swiftlint
         sudo gem install xcpretty
-        
+
     - name: Resolve Package Dependencies
-        run: |
-          echo "Checking Xcode version..."
-          xcodebuild -version
-          echo "Verifying project structure..."
-          ls -la Cinemark.xcodeproj/
-          echo "Listing project info..."
-          xcodebuild -project Cinemark.xcodeproj -list
-          echo "Resolving package dependencies..."
-          xcodebuild -project Cinemark.xcodeproj -resolvePackageDependencies
-      
+      run: |
+        echo "Checking Xcode version..."
+        xcodebuild -version
+        echo "Verifying project structure..."
+        ls -la Cinemark.xcodeproj/
+        echo "Listing project info..."
+        xcodebuild -project Cinemark.xcodeproj -list
+        echo "Resolving package dependencies..."
+        xcodebuild -project Cinemark.xcodeproj -resolvePackageDependencies
+
     - name: Build and Test
-        run: |
-          set -o pipefail && \
-          UDID=$(xcrun simctl list devices available --json | jq -r '.devices | map(.[]) | .[] | select(.name | contains("iPhone")) | .udid' | head -n 1) && \
-          echo "Found available simulator with UDID: $UDID" && \
-          xcodebuild clean build test \
-            -project Cinemark.xcodeproj \
-            -scheme Cinemark \
-            -destination "id=$UDID" \
-            CODE_SIGNING_ALLOWED=NO \
-          | xcpretty%  
+      run: |
+        set -o pipefail
+        UDID=$(xcrun simctl list devices available --json | jq -r '.devices | map(.[]) | .[] | select(.name | contains("iPhone")) | .udid' | head -n 1)
+        echo "Found available simulator with UDID: $UDID"
+        xcodebuild clean build test \
+          -project Cinemark.xcodeproj \
+          -scheme Cinemark \
+          -destination "id=$UDID" \
+          CODE_SIGNING_ALLOWED=NO \
+        | xcpretty
