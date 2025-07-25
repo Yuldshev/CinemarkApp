@@ -26,17 +26,6 @@ jobs:
         brew install swiftlint
         sudo gem install xcpretty
 
-    - name: Resolve Package Dependencies
-      run: |
-        echo "Checking Xcode version..."
-        xcodebuild -version
-        echo "Verifying project structure..."
-        ls -la CinemarkApp.xcodeproj/
-        echo "Listing project info..."
-        xcodebuild -project CinemarkApp.xcodeproj -list
-        echo "Resolving package dependencies..."
-        xcodebuild -project CinemarkApp.xcodeproj -resolvePackageDependencies
-
     - name: Build and Test
       run: |
         set -o pipefail
