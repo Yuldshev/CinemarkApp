@@ -10,9 +10,22 @@
 		13729E602E3349AF00883CC2 /* CinemarkApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CinemarkApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		13729E9D2E334DB800883CC2 /* Exceptions for "CinemarkApp" folder in "CinemarkApp" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				App/Info.plist,
+			);
+			target = 13729E5F2E3349AF00883CC2 /* CinemarkApp */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		13729E622E3349AF00883CC2 /* CinemarkApp */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				13729E9D2E334DB800883CC2 /* Exceptions for "CinemarkApp" folder in "CinemarkApp" target */,
+			);
 			path = CinemarkApp;
 			sourceTree = "<group>";
 		};
@@ -279,6 +292,7 @@
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = CinemarkApp/App/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Cinemark;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.entertainment";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -315,6 +329,7 @@
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = CinemarkApp/App/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Cinemark;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.entertainment";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
