@@ -1,46 +1,40 @@
 name: CI
-
+    
 on:
   push:
     branches: [ feature/ci-action ]
   pull_request:
     branches: [ feature/ci-action ]
-    
-env:
-  DEVELOPER_DIR: /Applications/Xcode.app/Contents/Developer
 
 jobs:
-  test:
-    name: Test
+  build-and-test:
     runs-on: macos-14
 
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v4
-      
-    - name: Select Xcode 15.4
-      run: sudo xcode-select -s /Applications/Xcode_15.4.app/Contents/Developer
+      - name: Checkout repository
+        uses: actions/checkout@v4
 
-    - name: Install jq
-      run: brew install jq
+      - name: Select Xcode version
+        run: sudo xcode-select -s /Applications/Xcode_15.4.app/Contents/Developer
 
-    - name: Install Dependencies
-      run: |
-        brew install swiftlint
-        sudo gem install xcpretty
+      - name: Install Dependencies
+        run: |
+          brew install swiftlint
+          sudo gem install xcpretty
 
-    - name: Resolve Package Dependencies
-      run: |
-        xcodebuild -project CinemarkApp.xcodeproj -resolvePackageDependencies
+      - name: Resolve Package Dependencies
+        run: |
+          xcodebuild -project CinemarkApp.xcodeproj -resolvePackageDependencies
 
-    - name: Build and Run Tests
-      run: |
-        set -o pipefail
-        UDID=$(xcrun simctl list devices available --json | jq -r '.devices | map(.[]) | .[] | select(.name | contains("iPhone")) | .udid' | head -n 1)
-        echo "Found available simulator with UDID: $UDID"
-        xcodebuild clean build test \
-          -project Cinemark.xcodeproj \
-          -scheme Cinemark \
-          -destination "id=$UDID" \
-          CODE_SIGNING_ALLOWED=NO \
-        | xcpretty
+      - name: Build and Test
+        run: |
+          set -o pipefail && \
+          UDID=$(xcrun simctl list devices available --json | jq -r '.devices | map(.[]) | .[] | select(.name | contains("iPhone")) | .udid' | head -n 1) && \
+          echo "Found available simulator with UDID: $UDID" && \
+          xcodebuild clean build test \
+            -project CinemarkApp.xcodeproj \
+            -scheme CinemarkApp \
+            -destination "id=$UDID" \
+            CODE_SIGNING_ALLOWED=NO \
+          | xcpretty
+
