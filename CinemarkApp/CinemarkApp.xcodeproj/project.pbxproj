@@ -11,10 +11,10 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		13729ECC2E33538C00883CC2 /* Exceptions for "CinemarkApp" folder in "CinemarkApp" target */ = {
+		13729EFA2E3388F800883CC2 /* Exceptions for "CinemarkApp" folder in "CinemarkApp" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
-				App/Info.plist,
+				Info.plist,
 			);
 			target = 13729E5F2E3349AF00883CC2 /* CinemarkApp */;
 		};
@@ -24,7 +24,7 @@
 		13729E622E3349AF00883CC2 /* CinemarkApp */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
-				13729ECC2E33538C00883CC2 /* Exceptions for "CinemarkApp" folder in "CinemarkApp" target */,
+				13729EFA2E3388F800883CC2 /* Exceptions for "CinemarkApp" folder in "CinemarkApp" target */,
 			);
 			path = CinemarkApp;
 			sourceTree = "<group>";
@@ -162,6 +162,8 @@
 /* Begin XCBuildConfiguration section */
 		13729E692E3349B000883CC2 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReferenceAnchor = 13729E622E3349AF00883CC2 /* CinemarkApp */;
+			baseConfigurationReferenceRelativePath = Core/Network/Secret.xcconfig;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -283,7 +285,10 @@
 		};
 		13729E6C2E3349B000883CC2 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReferenceAnchor = 13729E622E3349AF00883CC2 /* CinemarkApp */;
+			baseConfigurationReferenceRelativePath = Core/Network/Secret.xcconfig;
 			buildSettings = {
+				API_KEY = "$(API_KEY)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -292,6 +297,7 @@
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = CinemarkApp/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Cinemark;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.entertainment";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -320,6 +326,7 @@
 		13729E6D2E3349B000883CC2 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				API_KEY = "";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -328,6 +335,7 @@
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = CinemarkApp/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Cinemark;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.entertainment";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
