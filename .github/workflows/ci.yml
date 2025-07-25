@@ -2,9 +2,9 @@ name: CI
 
 on:
   push:
-    branches: [ ci-action, main, develop ]
+    branches: [ feature/ci-action ]
   pull_request:
-    branches: [ main, develop ]
+    branches: [ feature/ci-action ]
     
 env:
   DEVELOPER_DIR: /Applications/Xcode.app/Contents/Developer
