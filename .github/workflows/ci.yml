@@ -22,7 +22,7 @@ jobs:
       run: sudo xcode-select -switch /Applications/Xcode.app/Contents/Developer
       
     - name: Cache derived data
-      uses: actions/cache@v3
+      uses: actions/cache@v4
       with:
         path: ~/Library/Developer/Xcode/DerivedData
         key: ${{ runner.os }}-derived-data-${{ hashFiles('**/project.pbxproj') }}
@@ -58,7 +58,7 @@ jobs:
           -allowProvisioningUpdates
           
     - name: Upload test results
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       if: always()
       with:
         name: test-results
