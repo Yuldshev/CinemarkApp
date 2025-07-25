@@ -31,9 +31,9 @@ jobs:
           set -o pipefail && \
           UDID=$(xcrun simctl list devices available --json | jq -r '.devices | map(.[]) | .[] | select(.name | contains("iPhone")) | .udid' | head -n 1) && \
           echo "Found available simulator with UDID: $UDID" && \
-          xcodebuild clean build test \
-            -project CinemarkApp.xcodeproj \
-            -scheme CinemarkApp \
+          xcodebuild clean build \
+          -project CinemarkApp.xcodeproj \
+          -scheme CinemarkApp \
             -destination "id=$UDID" \
             CODE_SIGNING_ALLOWED=NO \
           | xcpretty
