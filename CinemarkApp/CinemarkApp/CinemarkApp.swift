@@ -1,7 +1,7 @@
 import SwiftUI
 
 @main
-struct CinemarkAppApp: App {
+struct CinemarkApp: App {
   var body: some Scene {
     WindowGroup {
       EmptyView()
