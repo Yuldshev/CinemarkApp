@@ -19,33 +19,25 @@
 /* Begin PBXFileReference section */
 		13729E602E3349AF00883CC2 /* CinemarkApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CinemarkApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13729EFF2E3391FA00883CC2 /* CinemarkAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CinemarkAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		13729E632E3349AF00883CC2 /* CinemarkApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CinemarkApp.swift; sourceTree = "<group>"; };
+		13729E642E3349AF00883CC2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		13729E652E3349AF00883CC2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		13729E662E3349AF00883CC2 /* APIEndpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIEndpoints.swift; sourceTree = "<group>"; };
+		13729E672E3349AF00883CC2 /* Secret.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Secret.swift; sourceTree = "<group>"; };
+		13729E682E3349AF00883CC2 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		13729E6E2E3349AF00883CC2 /* NetworkLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkLogger.swift; sourceTree = "<group>"; };
+		13729E6F2E3349AF00883CC2 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		13729E702E3349AF00883CC2 /* PersonModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonModel.swift; sourceTree = "<group>"; };
+		13729E712E3349AF00883CC2 /* MovieModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieModel.swift; sourceTree = "<group>"; };
+		13729E722E3349AF00883CC2 /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
+		13729E732E3349AF00883CC2 /* TVModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVModel.swift; sourceTree = "<group>"; };
+		13729F012E3391FA00883CC2 /* JSONLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONLoader.swift; sourceTree = "<group>"; };
+		13729F022E3391FA00883CC2 /* MockNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockNetworkService.swift; sourceTree = "<group>"; };
+		13729F082E3391FA00883CC2 /* PersonEndpointTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonEndpointTests.swift; sourceTree = "<group>"; };
+		13729F092E3391FA00883CC2 /* TVEndpointTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVEndpointTests.swift; sourceTree = "<group>"; };
+		13729F0A2E3391FA00883CC2 /* MovieEndpointTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieEndpointTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
-/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		13729EFA2E3388F800883CC2 /* Exceptions for "CinemarkApp" folder in "CinemarkApp" target */ = {
-			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
-			membershipExceptions = (
-				Info.plist,
-			);
-			target = 13729E5F2E3349AF00883CC2 /* CinemarkApp */;
-		};
-/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
-
-/* Begin PBXFileSystemSynchronizedRootGroup section */
-		13729E622E3349AF00883CC2 /* CinemarkApp */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			exceptions = (
-				13729EFA2E3388F800883CC2 /* Exceptions for "CinemarkApp" folder in "CinemarkApp" target */,
-			);
-			path = CinemarkApp;
-			sourceTree = "<group>";
-		};
-		13729F002E3391FA00883CC2 /* CinemarkAppTests */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = CinemarkAppTests;
-			sourceTree = "<group>";
-		};
-/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		13729E5D2E3349AF00883CC2 /* Frameworks */ = {
@@ -83,6 +75,77 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		13729E622E3349AF00883CC2 /* CinemarkApp */ = {
+			isa = PBXGroup;
+			children = (
+				13729E742E3349AF00883CC2 /* App */,
+				13729E752E3349AF00883CC2 /* Core */,
+				13729E642E3349AF00883CC2 /* Assets.xcassets */,
+				13729E652E3349AF00883CC2 /* Info.plist */,
+			);
+			path = CinemarkApp;
+			sourceTree = "<group>";
+		};
+		13729E742E3349AF00883CC2 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				13729E632E3349AF00883CC2 /* CinemarkApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		13729E752E3349AF00883CC2 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				13729E762E3349AF00883CC2 /* Network */,
+				13729E772E3349AF00883CC2 /* Models */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		13729E762E3349AF00883CC2 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				13729E662E3349AF00883CC2 /* APIEndpoints.swift */,
+				13729E672E3349AF00883CC2 /* Secret.swift */,
+				13729E682E3349AF00883CC2 /* NetworkService.swift */,
+				13729E6E2E3349AF00883CC2 /* NetworkLogger.swift */,
+				13729E6F2E3349AF00883CC2 /* NetworkError.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		13729E772E3349AF00883CC2 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				13729E702E3349AF00883CC2 /* PersonModel.swift */,
+				13729E712E3349AF00883CC2 /* MovieModel.swift */,
+				13729E722E3349AF00883CC2 /* Response.swift */,
+				13729E732E3349AF00883CC2 /* TVModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		13729F002E3391FA00883CC2 /* CinemarkAppTests */ = {
+			isa = PBXGroup;
+			children = (
+				13729F0B2E3391FA00883CC2 /* NetworkTests */,
+			);
+			path = CinemarkAppTests;
+			sourceTree = "<group>";
+		};
+		13729F0B2E3391FA00883CC2 /* NetworkTests */ = {
+			isa = PBXGroup;
+			children = (
+				13729F012E3391FA00883CC2 /* JSONLoader.swift */,
+				13729F022E3391FA00883CC2 /* MockNetworkService.swift */,
+				13729F082E3391FA00883CC2 /* PersonEndpointTests.swift */,
+				13729F092E3391FA00883CC2 /* TVEndpointTests.swift */,
+				13729F0A2E3391FA00883CC2 /* MovieEndpointTests.swift */,
+			);
+			path = NetworkTests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -98,9 +161,6 @@
 			buildRules = (
 			);
 			dependencies = (
-			);
-			fileSystemSynchronizedGroups = (
-				13729E622E3349AF00883CC2 /* CinemarkApp */,
 			);
 			name = CinemarkApp;
 			packageProductDependencies = (
@@ -121,9 +181,6 @@
 			);
 			dependencies = (
 				13729F042E3391FA00883CC2 /* PBXTargetDependency */,
-			);
-			fileSystemSynchronizedGroups = (
-				13729F002E3391FA00883CC2 /* CinemarkAppTests */,
 			);
 			name = CinemarkAppTests;
 			packageProductDependencies = (
@@ -160,7 +217,7 @@
 			);
 			mainGroup = 13729E572E3349AF00883CC2;
 			minimizedProjectReferenceProxies = 1;
-			preferredProjectObjectVersion = 77;
+			preferredProjectObjectVersion = 56;
 			productRefGroup = 13729E612E3349AF00883CC2 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -176,6 +233,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				13729E792E3349AF00883CC2 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -209,11 +267,40 @@
 		};
 /* End PBXShellScriptBuildPhase section */
 
+/* Begin PBXBuildFile section */
+		13729E782E3349AF00883CC2 /* CinemarkApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13729E632E3349AF00883CC2 /* CinemarkApp.swift */; };
+		13729E792E3349AF00883CC2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13729E642E3349AF00883CC2 /* Assets.xcassets */; };
+		13729E7A2E3349AF00883CC2 /* APIEndpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13729E662E3349AF00883CC2 /* APIEndpoints.swift */; };
+		13729E7B2E3349AF00883CC2 /* Secret.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13729E672E3349AF00883CC2 /* Secret.swift */; };
+		13729E7C2E3349AF00883CC2 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13729E682E3349AF00883CC2 /* NetworkService.swift */; };
+		13729E7D2E3349AF00883CC2 /* NetworkLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13729E6E2E3349AF00883CC2 /* NetworkLogger.swift */; };
+		13729E7E2E3349AF00883CC2 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13729E6F2E3349AF00883CC2 /* NetworkError.swift */; };
+		13729E7F2E3349AF00883CC2 /* PersonModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13729E702E3349AF00883CC2 /* PersonModel.swift */; };
+		13729E802E3349AF00883CC2 /* MovieModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13729E712E3349AF00883CC2 /* MovieModel.swift */; };
+		13729E812E3349AF00883CC2 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13729E722E3349AF00883CC2 /* Response.swift */; };
+		13729E822E3349AF00883CC2 /* TVModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13729E732E3349AF00883CC2 /* TVModel.swift */; };
+		13729F0C2E3391FA00883CC2 /* JSONLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13729F012E3391FA00883CC2 /* JSONLoader.swift */; };
+		13729F0D2E3391FA00883CC2 /* MockNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13729F022E3391FA00883CC2 /* MockNetworkService.swift */; };
+		13729F0E2E3391FA00883CC2 /* PersonEndpointTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13729F082E3391FA00883CC2 /* PersonEndpointTests.swift */; };
+		13729F0F2E3391FA00883CC2 /* TVEndpointTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13729F092E3391FA00883CC2 /* TVEndpointTests.swift */; };
+		13729F102E3391FA00883CC2 /* MovieEndpointTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13729F0A2E3391FA00883CC2 /* MovieEndpointTests.swift */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXSourcesBuildPhase section */
 		13729E5C2E3349AF00883CC2 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				13729E782E3349AF00883CC2 /* CinemarkApp.swift in Sources */,
+				13729E7A2E3349AF00883CC2 /* APIEndpoints.swift in Sources */,
+				13729E7B2E3349AF00883CC2 /* Secret.swift in Sources */,
+				13729E7C2E3349AF00883CC2 /* NetworkService.swift in Sources */,
+				13729E7D2E3349AF00883CC2 /* NetworkLogger.swift in Sources */,
+				13729E7E2E3349AF00883CC2 /* NetworkError.swift in Sources */,
+				13729E7F2E3349AF00883CC2 /* PersonModel.swift in Sources */,
+				13729E802E3349AF00883CC2 /* MovieModel.swift in Sources */,
+				13729E812E3349AF00883CC2 /* Response.swift in Sources */,
+				13729E822E3349AF00883CC2 /* TVModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -221,6 +308,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				13729F0C2E3391FA00883CC2 /* JSONLoader.swift in Sources */,
+				13729F0D2E3391FA00883CC2 /* MockNetworkService.swift in Sources */,
+				13729F0E2E3391FA00883CC2 /* PersonEndpointTests.swift in Sources */,
+				13729F0F2E3391FA00883CC2 /* TVEndpointTests.swift in Sources */,
+				13729F102E3391FA00883CC2 /* MovieEndpointTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -237,8 +329,6 @@
 /* Begin XCBuildConfiguration section */
 		13729E692E3349B000883CC2 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReferenceAnchor = 13729E622E3349AF00883CC2 /* CinemarkApp */;
-			baseConfigurationReferenceRelativePath = Core/Network/Secret.xcconfig;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -360,8 +450,6 @@
 		};
 		13729E6C2E3349B000883CC2 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReferenceAnchor = 13729E622E3349AF00883CC2 /* CinemarkApp */;
-			baseConfigurationReferenceRelativePath = Core/Network/Secret.xcconfig;
 			buildSettings = {
 				API_KEY = "$(API_KEY)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
