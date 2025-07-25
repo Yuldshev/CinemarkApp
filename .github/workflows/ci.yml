@@ -29,12 +29,10 @@ jobs:
       - name: Build and Test
         run: |
           set -o pipefail && \
-          UDID=$(xcrun simctl list devices available --json | jq -r '.devices | map(.[]) | .[] | select(.name | contains("iPhone")) | .udid' | head -n 1) && \
-          echo "Found available simulator with UDID: $UDID" && \
           xcodebuild clean build \
-            -project CinemarkApp/CinemarkApp.xcodeproj \
-            -scheme CinemarkApp \
-            -destination "id=$UDID" \
-            CODE_SIGNING_ALLOWED=NO \
+          -project CinemarkApp/CinemarkApp.xcodeproj \
+          -scheme CinemarkApp \
+          -destination 'platform=iOS Simulator,name=iPhone 15,OS=latest' \
+          CODE_SIGNING_ALLOWED=NO \
           | xcpretty
 
