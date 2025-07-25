@@ -11,8 +11,8 @@ env:
 
 jobs:
   test:
-    name: Test
-    runs-on: macos-latest
+    name: Select Xcode Version
+    runs-on: sudo xcode-select -switch /Applications/Xcode_16.0.app/Contents/Developer
     
     steps:
     - name: Checkout
