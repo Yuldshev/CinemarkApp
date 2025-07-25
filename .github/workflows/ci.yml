@@ -31,11 +31,11 @@ jobs:
         echo "Checking Xcode version..."
         xcodebuild -version
         echo "Verifying project structure..."
-        ls -la Cinemark.xcodeproj/
+        ls -la CinemarkApp.xcodeproj/
         echo "Listing project info..."
-        xcodebuild -project Cinemark.xcodeproj -list
+        xcodebuild -project CinemarkApp.xcodeproj -list
         echo "Resolving package dependencies..."
-        xcodebuild -project Cinemark.xcodeproj -resolvePackageDependencies
+        xcodebuild -project CinemarkApp.xcodeproj -resolvePackageDependencies
 
     - name: Build and Test
       run: |
